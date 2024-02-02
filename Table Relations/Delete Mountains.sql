@@ -1,0 +1,12 @@
+CREATE TABLE mountains(
+id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(25) not NULL
+);
+Create TABLE peaks(
+id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(25) not NULL,
+mountain_id INT NOT NULL,
+CONSTRAINT fk_mountain_id FOREIGN KEY (mountain_id)
+REFERENCES mountains(id)
+on DELETE CASCADE
+);
